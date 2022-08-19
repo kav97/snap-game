@@ -51,6 +51,11 @@ public class CardGame {
         return deckOfCards;
     }
 
+    public ArrayList<Card> sortDeckIntoSuits(){
+        deckOfCards.sort( (a, b) -> a.getSuit().compareTo(b.getSuit()) );
+        return deckOfCards;
+    }
+
 
     public static void main(String[] args) {
         CardGame deck = new CardGame();
@@ -58,6 +63,7 @@ public class CardGame {
         deck.getDeck();
         System.out.println(deck.dealCard());
         System.out.println(deck.sortDeckInNumberOrder());
+        System.out.println(deck.sortDeckIntoSuits());
     }
 
 }
