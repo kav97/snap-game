@@ -42,11 +42,22 @@ public class CardGame {
         }
     }
 
+    public Card dealCard() {
+        return deckOfCards.get(deckOfCards.size() - 1);
+    }
+
+    public ArrayList<Card> sortDeckInNumberOrder(){
+        deckOfCards.sort((a, b) -> a.getValue() - b.getValue());
+        return deckOfCards;
+    }
+
 
     public static void main(String[] args) {
         CardGame deck = new CardGame();
 
         deck.getDeck();
+        System.out.println(deck.dealCard());
+        System.out.println(deck.sortDeckInNumberOrder());
     }
 
 }
