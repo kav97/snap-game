@@ -12,13 +12,13 @@ public class CardGame {
             String suit;
             String symbol;
             if (i == 1) {
-                suit = "\u2665";    // Hearts
+                suit = "\u2665";    // hearts
             } else if (i == 2) {
-                suit = "\u2660";    // Spades
+                suit = "\u2660";    // spades
             } else if (i == 3) {
-                suit = "\u25C6";    // Diamonds
+                suit = "\u25C6";    // diamonds
             } else {
-                suit = "\u2663";    // Clubs
+                suit = "\u2663";    // clubs
             }
             for (int j = 2; j <= 14; j++) {
                 if (j <= 10) {
@@ -44,7 +44,7 @@ public class CardGame {
     }
 
     public Card dealCard() {
-        return deckOfCards.get(deckOfCards.size() - 1);
+        return deckOfCards.remove(deckOfCards.size() - 1);
     }
 
     public ArrayList<Card> sortDeckInNumberOrder(){
@@ -57,9 +57,19 @@ public class CardGame {
         return deckOfCards;
     }
 
-    public ArrayList<Card> shuffleDeck(){
+    public static ArrayList<Card> shuffleDeck(){
         Collections.shuffle(deckOfCards);
         return deckOfCards;
+    }
+
+    public boolean compareCard (Card cardOne, Card cardTwo){
+        String cardOneSymbol = cardOne.getSymbol();
+        String cardTwoSymbol = cardTwo.getSymbol();
+//        System.out.println(cardOneSymbol);
+//        System.out.println(cardTwoSymbol);
+//        boolean isSame = cardOneSymbol.equals(cardTwoSymbol);
+//        System.out.println(isSame);
+        return cardOneSymbol.equals(cardTwoSymbol);
     }
 
 
@@ -68,16 +78,18 @@ public class CardGame {
 
         System.out.println("retrieve deck:");
         deck.getDeck();
-        System.out.println("deal card:");
-        System.out.println(deck.dealCard());
-        System.out.println("sort deck by number:");
-        System.out.println(deck.sortDeckInNumberOrder());
-        System.out.println("sort deck by suit");
-        System.out.println(deck.sortDeckIntoSuits());
-        System.out.println("shuffle deck");
-        System.out.println(deck.shuffleDeck());
-        System.out.println("deal card:");
-        System.out.println(deck.dealCard());
+//        System.out.println("deal card:");
+//        System.out.println(deck.dealCard());
+//        System.out.println("sort deck by number:");
+//        System.out.println(deck.sortDeckInNumberOrder());
+//        System.out.println("sort deck by suit");
+//        System.out.println(deck.sortDeckIntoSuits());
+//        System.out.println("shuffle deck");
+//        System.out.println(deck.shuffleDeck());
+//        System.out.println("deal card:");
+//        System.out.println(deck.dealCard());
+//        deck.getDeck();
+
 
     }
 
