@@ -17,6 +17,6 @@ public class Player {
     }
 
     public String getWin() {
-        return "SNAP!! " + getName() + "You win!!";
+        return "SNAP!! You won " + getName() + "!!";
     }
 }

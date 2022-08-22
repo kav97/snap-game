@@ -2,10 +2,13 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class CardGame {
 
     private static final ArrayList<Card> deckOfCards = new ArrayList<>();
+
+    Scanner scanner = new Scanner( System.in );
 
     public CardGame() {
         for ( int i = 1; i <= 4; i++ ) {
@@ -55,12 +58,15 @@ public class CardGame {
         return deckOfCards;
     }
 
-    public static ArrayList<Card> shuffleDeck() {
+    public static void shuffleDeck() {
         Collections.shuffle( deckOfCards );
-        return deckOfCards;
     }
 
-    public static void getMessage( String message ) {
+    public String userInput() {
+        return scanner.nextLine();
+    }
+
+    public void getMessage( String message ) {
         System.out.println( message );
     }
 
