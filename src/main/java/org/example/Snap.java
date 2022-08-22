@@ -9,36 +9,36 @@ package org.example;
 import java.util.Scanner;
 
 public class Snap extends CardGame {
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner( System.in );
 
-    public boolean isCardsSuitMatching (Card cardOne, Card cardTwo){
+    public boolean isCardsSuitMatching ( Card cardOne, Card cardTwo ) {
         String cardOneSymbol = cardOne.getSymbol();
         String cardTwoSymbol = cardTwo.getSymbol();
         return cardOneSymbol.equals(cardTwoSymbol);
     }
-    public void runGame() {
 
+    public void runGame() {
         boolean isRunning = true;
 
         CardGame cardGame = new CardGame();
 
-        System.out.println("Press enter to deal card ");
+        System.out.println( "Press enter to deal card" );
 
         shuffleDeck();
         Card previousCard = null;
 
-        while(isRunning){
+        while( isRunning ) {
 
             String inputData = scanner.nextLine();
             int value = inputData.length();
 
-            if (value == 0) {
+            if ( value == 0 ) {   // the game only deals a card if enter is pressed
                 Card dealCard = cardGame.dealCard();
-                System.out.println(dealCard);
+                System.out.println( dealCard );
 
-                if(previousCard != null){
-                    if(isCardsSuitMatching(previousCard, dealCard)){
-                        System.out.println("SNAP!");
+                if( previousCard != null ) {
+                    if( isCardsSuitMatching( previousCard, dealCard ) ) {
+                        System.out.println( "SNAP!!!" );
                         isRunning = false;
                     }
                 }
@@ -48,7 +48,7 @@ public class Snap extends CardGame {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main( String[] args ) {
         Snap snap = new Snap();
         snap.runGame();
     }

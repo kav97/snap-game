@@ -30,6 +30,6 @@ public class Card {
 
     @Override
     public String toString(){
-        return String.format("Symbol: %s\nSuit: %s\nValue: %d\n", getSymbol(), getSuit(), getValue());
+        return String.format( "Symbol: %s\nSuit: %s\nValue: %d\n", getSymbol(), getSuit(), getValue() );
     }
 }
