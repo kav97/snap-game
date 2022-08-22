@@ -9,28 +9,27 @@ package org.example;
 import java.util.Scanner;
 
 public class Snap extends CardGame {
+    Scanner scanner = new Scanner(System.in);
 
-    public Scanner getScanner() {
-
-        Scanner scanner = new Scanner(System.in);
-        return scanner;
-
+    public boolean isCardsSuitMatching (Card cardOne, Card cardTwo){
+        String cardOneSymbol = cardOne.getSymbol();
+        String cardTwoSymbol = cardTwo.getSymbol();
+        return cardOneSymbol.equals(cardTwoSymbol);
     }
-
     public void runGame() {
+
         boolean isRunning = true;
 
         CardGame cardGame = new CardGame();
 
         System.out.println("Press enter to deal card ");
 
-
-        getDeck();
+        shuffleDeck();
         Card previousCard = null;
 
         while(isRunning){
 
-            String inputData = getScanner().nextLine();
+            String inputData = scanner.nextLine();
             int value = inputData.length();
 
             if (value == 0) {
@@ -38,23 +37,19 @@ public class Snap extends CardGame {
                 System.out.println(dealCard);
 
                 if(previousCard != null){
-                    if(cardGame.compareCard(previousCard, dealCard)){
-                        System.out.println("you win ");
+                    if(isCardsSuitMatching(previousCard, dealCard)){
+                        System.out.println("SNAP!");
                         isRunning = false;
                     }
                 }
 
                 previousCard = dealCard;
-
             }
         }
-
     }
-
 
     public static void main(String[] args) {
         Snap snap = new Snap();
         snap.runGame();
     }
-
 }

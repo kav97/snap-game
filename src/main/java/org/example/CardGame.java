@@ -62,35 +62,4 @@ public class CardGame {
         return deckOfCards;
     }
 
-    public boolean compareCard (Card cardOne, Card cardTwo){
-        String cardOneSymbol = cardOne.getSymbol();
-        String cardTwoSymbol = cardTwo.getSymbol();
-//        System.out.println(cardOneSymbol);
-//        System.out.println(cardTwoSymbol);
-//        boolean isSame = cardOneSymbol.equals(cardTwoSymbol);
-//        System.out.println(isSame);
-        return cardOneSymbol.equals(cardTwoSymbol);
-    }
-
-
-    public static void main(String[] args) {
-        CardGame deck = new CardGame();
-
-        System.out.println("retrieve deck:");
-        deck.getDeck();
-//        System.out.println("deal card:");
-//        System.out.println(deck.dealCard());
-//        System.out.println("sort deck by number:");
-//        System.out.println(deck.sortDeckInNumberOrder());
-//        System.out.println("sort deck by suit");
-//        System.out.println(deck.sortDeckIntoSuits());
-//        System.out.println("shuffle deck");
-//        System.out.println(deck.shuffleDeck());
-//        System.out.println("deal card:");
-//        System.out.println(deck.dealCard());
-//        deck.getDeck();
-
-
-    }
-
 }
